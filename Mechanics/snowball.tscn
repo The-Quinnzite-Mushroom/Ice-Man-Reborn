@@ -25,12 +25,18 @@ func _draw():
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group(\"Player\"):
+		print(\"Hit Player\")
 		body.velocity /= 2
 		queue_free()
 		
-
-
 func _on_timer_timeout() -> void:
+	queue_free()
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group(\"Player\"):
+		print(\"Hit Player\")
+		area.velocity /= 2
 	queue_free()
 "
 
@@ -46,4 +52,5 @@ shape = SubResource("CircleShape2D_ly7p2")
 wait_time = 15.0
 autostart = true
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

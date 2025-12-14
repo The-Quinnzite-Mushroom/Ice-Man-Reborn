@@ -15,7 +15,7 @@ size = Vector2(17, 16)
 script = ExtResource("1_ep78u")
 
 [node name="Background" parent="." instance=ExtResource("1_ilhis")]
-position = Vector2(1, -1204)
+position = Vector2(136, -1211)
 scale = Vector2(3, 3)
 
 [node name="LevelExit" type="Area2D" parent="."]
@@ -42,8 +42,9 @@ character_body_2d = NodePath("../Player2")
 
 [node name="Node2D" type="Node2D" parent="."]
 
-[node name="SnowBalEnemy" parent="Node2D" instance=ExtResource("3_0srwa")]
+[node name="SnowBalEnemy" parent="Node2D" node_paths=PackedStringArray("lock_on_node") instance=ExtResource("3_0srwa")]
 position = Vector2(233, -74)
+lock_on_node = NodePath("../../Node2D2")
 timer_seconds = 0.1
 direction = Vector2(1, 0)
 
@@ -79,5 +80,8 @@ direction = Vector2(1, 0)
 
 [node name="ice_deposit" parent="." instance=ExtResource("5_5722l")]
 position = Vector2(722, 0)
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(728, -345)
 
 [connection signal="area_entered" from="LevelExit" to="." method="_on_level_exit_area_entered"]
