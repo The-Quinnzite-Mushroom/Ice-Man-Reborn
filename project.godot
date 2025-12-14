@@ -21,6 +21,10 @@ project/assembly_name="New Game Project"
 "ice deposit"=""
 "player collision"=""
 
+[global_group]
+
+projectile=""
+
 [input]
 
 ui_left={

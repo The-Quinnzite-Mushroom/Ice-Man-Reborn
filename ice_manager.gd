@@ -54,7 +54,7 @@ func ice_rectangle_placement(ice_rectangle):
 	
 
 func projectile_hit_ice_rectangle(projectile_position, projectile_hit_radius):
-	'''
+	
 	var removed_idxs = []
 	for i in range(ice_rectangles.size()):
 		if ice_rectangles[i].global_position.distance_to(projectile_position) < projectile_hit_radius:
@@ -63,8 +63,7 @@ func projectile_hit_ice_rectangle(projectile_position, projectile_hit_radius):
 			
 	for removed_idx in removed_idxs:
 		ice_rectangles.remove_at(removed_idx)
-	'''
-	pass
+	
 	
 
 func remove_ice_rectangle(ice_rectangle_id):

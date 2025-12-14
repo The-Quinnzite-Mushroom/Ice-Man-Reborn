@@ -5,9 +5,9 @@ script/source = "extends Moving_Enemy
 
 @onready var timer: Timer = $Timer
 const SNOWBALL_SCENE: PackedScene = preload(\"res://Mechanics/snowball.tscn\")
-var homing: bool = true
-var throw_speed: float = 700
-var random_throw_angle_range: float = 45
+@export var homing: bool = true
+@export var throw_speed: float = 700
+@export var random_throw_angle_range: float = 45
 var thrown: bool = false
 var can_throw: bool = false
 

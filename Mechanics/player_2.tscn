@@ -112,7 +112,7 @@ animations = [{
 radius = 7.685
 height = 25.12
 
-[node name="Player2" type="CharacterBody2D"]
+[node name="Player2" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_gm7yn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -129,3 +129,5 @@ shape = SubResource("CapsuleShape2D_kuirs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_kuirs")
+
+[connection signal="area_entered" from="playerArea" to="." method="_on_player_area_area_entered"]

@@ -32,7 +32,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ly7p2"]
 
-[node name="Snowball" type="Area2D"]
+[node name="Snowball" type="Area2D" groups=["projectile"]]
 script = SubResource("GDScript_ly7p2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

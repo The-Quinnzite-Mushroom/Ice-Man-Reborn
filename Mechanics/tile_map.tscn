@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d000wlp7gsndn" path="res://art/temp_tile_set.png" id="1_l1hdn"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f85t3"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l1hdn"]
 texture = ExtResource("1_l1hdn")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -19,7 +19,7 @@ texture = ExtResource("1_l1hdn")
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8)
 2:1/0 = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, 8, -8.952468, 7.913784)
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, 8, -8.95247, 7.91378)
 1:2/0 = 0
 1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, -8)
 2:2/0 = 0
@@ -80,14 +80,14 @@ texture = ExtResource("1_l1hdn")
 8:2/0 = 0
 8:2/0/terrain_set = 0
 8:2/0/terrain = 0
-8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 5.0450363, -8, 5.143959)
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 5.04504, -8, 5.14396)
 8:2/0/terrains_peering_bit/left_side = 0
 8:2/0/terrains_peering_bit/top_left_corner = 0
 8:2/0/terrains_peering_bit/top_side = 0
 7:2/0 = 0
 7:2/0/terrain_set = 0
 7:2/0/terrain = 0
-7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 5.0450363, -8, 5.143959)
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 5.04504, -8, 5.14396)
 7:2/0/terrains_peering_bit/right_side = 0
 7:2/0/terrains_peering_bit/left_side = 0
 7:2/0/terrains_peering_bit/top_left_corner = 0
@@ -96,7 +96,7 @@ texture = ExtResource("1_l1hdn")
 6:2/0 = 0
 6:2/0/terrain_set = 0
 6:2/0/terrain = 0
-6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 5.0450363, -8, 5.143959)
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 5.04504, -8, 5.14396)
 6:2/0/terrains_peering_bit/right_side = 0
 6:2/0/terrains_peering_bit/top_side = 0
 6:2/0/terrains_peering_bit/top_right_corner = 0
@@ -219,10 +219,12 @@ texture = ExtResource("1_l1hdn")
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Snow"
+
 terrain_set_0/terrain_0/color = Color(0.22220746, 0.37979752, 1, 1)
 terrain_set_0/terrain_1/name = "Snow Slope 1"
 terrain_set_0/terrain_1/color = Color(0.81230927, 0.8328595, 1, 1)
 sources/0 = SubResource("TileSetAtlasSource_f85t3")
+
 
 [node name="TileMap" type="Node2D"]
 
