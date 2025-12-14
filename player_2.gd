@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var ice_circle: Node2D = $iceCircle
+
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -72,3 +74,10 @@ func _physics_process(delta: float) -> void:
 	#rotation = TEMPVECTOR.angle_to(velocity)
 
 	move_and_slide()
+
+
+func _on_player_area_area_entered(area: Area2D) -> void:
+	if area.is_in_group("projectile") or area.is_in_group("spikes"):
+		ice_circle.take_damage(20)
+	
+		
