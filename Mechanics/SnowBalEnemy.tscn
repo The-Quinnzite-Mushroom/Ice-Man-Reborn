@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxw7kpfudeajs"]
+[gd_scene load_steps=4 format=3 uid="uid://bxw7kpfudeajs"]
+
+[ext_resource type="Texture2D" uid="uid://cshxo63px50i6" path="res://art/snowman.png" id="1_wawgv"]
 
 [sub_resource type="GDScript" id="GDScript_745ot"]
 script/source = "extends Moving_Enemy
@@ -77,6 +79,8 @@ gravity_scale = 5.0
 script = SubResource("GDScript_745ot")
 
 [node name="Sprite2d" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_wawgv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_au7ya")
