@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://cshh0ivo7d07n"]
+[gd_scene load_steps=9 format=4 uid="uid://bv7b6dmb2i86v"]
 
+[ext_resource type="PackedScene" uid="uid://cckps312nbpr0" path="res://Mechanics/background.tscn" id="1_ilhis"]
 [ext_resource type="PackedScene" uid="uid://dwee3322pm225" path="res://Mechanics/player_2.tscn" id="1_pqqg8"]
 [ext_resource type="Texture2D" uid="uid://d000wlp7gsndn" path="res://art/temp_tile_set.png" id="2_pqqg8"]
 [ext_resource type="PackedScene" uid="uid://bxw7kpfudeajs" path="res://Mechanics/SnowBalEnemy.tscn" id="3_0srwa"]
@@ -115,6 +116,10 @@ terrain_set_0/terrain_0/color = Color(0.222207, 0.379798, 1, 1)
 sources/0 = SubResource("TileSetAtlasSource_0srwa")
 
 [node name="Level2" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_ilhis")]
+position = Vector2(1, -1204)
+scale = Vector2(3, 3)
 
 [node name="TileMap" type="TileMap" parent="."]
 format = 2
