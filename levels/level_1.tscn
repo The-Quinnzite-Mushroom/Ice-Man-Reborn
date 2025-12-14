@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dk0pwi3g46lvl"]
 
-[ext_resource type="Script" path="res://levels/level_base.gd" id="1_kx6l7"]
+[ext_resource type="Script" uid="uid://cymcltac60k00" path="res://levels/level_base.gd" id="1_kx6l7"]
 [ext_resource type="PackedScene" uid="uid://xcjn7l38ay0x" path="res://levels/level_info_1.tscn" id="2_jirdo"]
 [ext_resource type="PackedScene" uid="uid://dwee3322pm225" path="res://Mechanics/player_2.tscn" id="4_kx6l7"]
 [ext_resource type="Script" uid="uid://dq60fcyps0ayg" path="res://ice_manager.gd" id="5_gwceb"]

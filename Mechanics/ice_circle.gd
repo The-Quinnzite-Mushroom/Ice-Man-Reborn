@@ -36,12 +36,25 @@ func _physics_process(delta: float) -> void:
 	if spawning_ice:
 		spawn_ice_rectangle()
 	
+func take_damage(damage):
+	current_health -= damage
+	ice_bar.value = current_health
 	
+	if current_health <= 0.0:
+		get_tree().reload_current_scene()
+	
+
 func spawn_ice_rectangle():
 	ice_placed.emit((mouse_direction*ice_placement_radius) + global_position, ice_placement_direction.angle())
 	current_health -= placement_cost
 	ice_bar.value = current_health
 	
+	if current_health <= 0.0:
+		get_tree().reload_current_scene()
+	
+
+
+
 
 func get_mouse_direction():
 	var mouse_pos = get_global_mouse_position()
