@@ -10,9 +10,10 @@ const JUMP_VELOCITY = -400.0
 const STARTING_VEL = 300.0
 const MAX_VEL = 600.0
 const ACCEL = 200
-const TEMPVECTOR = Vector2(0,-1)
+const TEMPVECTOR = Vector2(0,1)
 
 const RUNNING_ANIMATION_SPEEDUP = 2
+const RUN_TILT = PI/ 8
 
 #wwd wdawdad
 
@@ -50,6 +51,7 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play("running")
 		set_running_animaton_speed()
 		$AnimatedSprite2D.flip_h = false
+		#rotation = velocity.angle_to(TEMPVECTOR)
 		if direction > 0:# Going right
 			if velocity.x < STARTING_VEL:
 				velocity.x = STARTING_VEL
@@ -67,11 +69,12 @@ func _physics_process(delta: float) -> void:
 					velocity.x = -MAX_VEL
 			
 	else:
+		rotation = 0
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		$AnimatedSprite2D.play("idle")
 		$AnimatedSprite2D.speed_scale = 1
 		
-	#rotation = TEMPVECTOR.angle_to(velocity)
+	
 
 	move_and_slide()
 
