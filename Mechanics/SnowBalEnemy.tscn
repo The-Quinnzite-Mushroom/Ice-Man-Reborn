@@ -84,4 +84,7 @@ shape = SubResource("RectangleShape2D_au7ya")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(-10, 0)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
