@@ -32,6 +32,7 @@ func _physics_process(_delta: float) -> void:
 			throw_randomly()
 		
 func lock_in_player(player):
+	
 	if player is CharacterBody2D:
 		var to_player_direction = (player.global_position - global_position).normalized()
 		var velocity = to_player_direction * throw_speed
