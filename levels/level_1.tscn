@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dk0pwi3g46lvl"]
+
+[ext_resource type="Script" uid="uid://dfmxw1ees42p0" path="res://level_1.gd" id="1_vn7o3"]
+[ext_resource type="PackedScene" uid="uid://xcjn7l38ay0x" path="res://levels/level_info_1.tscn" id="2_jirdo"]
+[ext_resource type="PackedScene" uid="uid://dwee3322pm225" path="res://Mechanics/player_2.tscn" id="4_kx6l7"]
+[ext_resource type="Script" uid="uid://dq60fcyps0ayg" path="res://ice_manager.gd" id="5_gwceb"]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_vn7o3")
+
+[node name="LevelInfo1" parent="." instance=ExtResource("2_jirdo")]
+
+[node name="Node2D" type="Node2D" parent="." node_paths=PackedStringArray("character_body_2d")]
+script = ExtResource("5_gwceb")
+character_body_2d = NodePath("../Player2")
+
+[node name="Player2" parent="." instance=ExtResource("4_kx6l7")]
+
+[node name="Camera2D" type="Camera2D" parent="Player2"]

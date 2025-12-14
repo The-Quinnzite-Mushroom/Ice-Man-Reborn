@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvl64iexctv0e"]
+
+[ext_resource type="Script" uid="uid://5mgxu4rfrk1s" path="res://Mechanics/ice_circle.gd" id="1_viygt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xy3n8"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_viygt"]
+material = SubResource("StandardMaterial3D_xy3n8")
+size = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_viygt"]
+bg_color = Color(0.364706, 0.721569, 0.890196, 0.431373)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xy3n8"]
+bg_color = Color(0.284696, 0.605739, 0.987152, 1)
+
+[node name="iceCircle" type="Node2D"]
+script = ExtResource("1_viygt")
+ice_placement_radius = 20
+
+[node name="icePlacementIndictor" type="MeshInstance2D" parent="."]
+mesh = SubResource("QuadMesh_viygt")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+offset_right = 155.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+
+[node name="IceBar" type="ProgressBar" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_viygt")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xy3n8")
+value = 100.0
+show_percentage = false

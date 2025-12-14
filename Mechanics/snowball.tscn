@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://c35328bfen8hr"]
+
+[sub_resource type="GDScript" id="GDScript_ly7p2"]
+script/source = "extends Area2D
+
+@export var radius: int = 16
+@export var collsion_shape: CollisionShape2D
+var velocity: Vector2 = Vector2.ZERO
+
+func _ready():
+	collsion_shape = CollisionShape2D.new()
+	var circle := CircleShape2D.new()
+	circle.radius = radius
+	collsion_shape.shape = circle
+	add_child(collsion_shape)
+
+	queue_redraw()
+
+func _physics_process(delta: float) -> void:
+	velocity.y += (gravity/2) * delta
+	position += velocity * delta
+
+func _draw():
+	draw_circle(Vector2.ZERO, radius, Color(1.0, 1.0, 1.0, 1.0))
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"Player\"):
+		body.velocity /= 2
+		queue_free()
+		
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ly7p2"]
+
+[node name="Snowball" type="Area2D"]
+script = SubResource("GDScript_ly7p2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ly7p2")

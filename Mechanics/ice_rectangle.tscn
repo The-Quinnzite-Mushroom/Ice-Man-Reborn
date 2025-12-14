@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://ba6euiiltsejy"]
+
+[ext_resource type="Script" uid="uid://cx6pvyvl28qiv" path="res://Mechanics/ice_rectangle.gd" id="1_s5gu2"]
+[ext_resource type="Texture2D" uid="uid://21is70p37ejf" path="res://art/ice_texture.png" id="2_euf75"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfulh"]
+size = Vector2(20, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5gu2"]
+size = Vector2(21, 6)
+
+[node name="IceRectangle" type="Node2D"]
+script = ExtResource("1_s5gu2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_lfulh")
+
+[node name="meltTimer" type="Timer" parent="."]
+
+[node name="projectileDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="projectileDetector"]
+shape = SubResource("RectangleShape2D_s5gu2")
+
+[node name="spawnIceEffect" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 16
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.48
+emission_shape = 1
+emission_sphere_radius = 7.47
+direction = Vector2(1, 1)
+spread = 180.0
+gravity = Vector2(-9.8, 9.8)
+initial_velocity_min = 10.0
+initial_velocity_max = 30.0
+angle_min = 29.1
+angle_max = 232.7
+color = Color(0.347227, 0.740897, 0.935717, 1)
+
+[node name="iceSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_euf75")
+
+[connection signal="timeout" from="meltTimer" to="." method="_on_melt_timer_timeout"]
+[connection signal="area_entered" from="projectileDetector" to="." method="_on_projectile_detector_area_entered"]

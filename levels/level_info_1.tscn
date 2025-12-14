@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://xcjn7l38ay0x"]
+
+[ext_resource type="PackedScene" uid="uid://dmr436gq7ao7r" path="res://Mechanics/tile_map.tscn" id="1_1s4i8"]
+[ext_resource type="Script" uid="uid://dmhedv2y5ci17" path="res://levels/level_info_1.gd" id="1_wqbej"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqbej"]
+size = Vector2(17, 16)
+
+[node name="LevelInfo1" type="Node2D"]
+script = ExtResource("1_wqbej")
+
+[node name="TileMap" parent="." instance=ExtResource("1_1s4i8")]
+
+[node name="LevelExit" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelExit"]
+position = Vector2(2136.5, -360)
+shape = SubResource("RectangleShape2D_wqbej")
+
+[connection signal="area_entered" from="LevelExit" to="." method="_on_level_exit_area_entered"]

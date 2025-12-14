@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://mv2y657cnie8"]
+
+[ext_resource type="Script" uid="uid://da87b7s4lxjtr" path="res://Mechanics/character_body_2d.gd" id="1_qv0fo"]
+[ext_resource type="Script" uid="uid://dq60fcyps0ayg" path="res://scene_manager.gd" id="1_ubcg6"]
+[ext_resource type="PackedScene" uid="uid://cvl64iexctv0e" path="res://Mechanics/ice_circle.tscn" id="2_4ops4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfrg4"]
+size = Vector2(988, 18)
+
+[node name="testPlayerScene" type="Node2D"]
+script = ExtResource("1_ubcg6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(0, -143)
+script = ExtResource("1_qv0fo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_hfrg4")
+
+[node name="iceCircle" parent="CharacterBody2D" instance=ExtResource("2_4ops4")]
+position = Vector2(1, -45)
+ice_placement_radius = 80
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-23, -1)
+shape = SubResource("RectangleShape2D_hfrg4")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_qv0fo")]
+position = Vector2(0, -100)

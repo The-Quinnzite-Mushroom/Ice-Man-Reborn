@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bslqjgh6b6nym"]
+
+[ext_resource type="Script" uid="uid://b8qtjtcakwfbl" path="res://gameObject/ice_deposit.gd" id="1_a7mio"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1mgml"]
+
+[node name="ice_deposit" type="Node2D"]
+script = ExtResource("1_a7mio")
+
+[node name="Area2D" type="Area2D" parent="." groups=["ice deposit"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_1mgml")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

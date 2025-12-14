@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://duyfuwe6eiv2d"]
+
+[ext_resource type="Script" uid="uid://54rw4uhf5h2c" path="res://Mechanics/directional_enemy.gd" id="1_kd25x"]
+[ext_resource type="Texture2D" uid="uid://cprvpiip5hfqw" path="res://icon.svg" id="2_1ad0j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ad0j"]
+size = Vector2(128, 127)
+
+[node name="DirectionalEnemy" type="RigidBody2D"]
+mass = 5.0
+script = ExtResource("1_kd25x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1ad0j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_1ad0j")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 64)
