@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=4 uid="uid://c4fm3aq6od45"]
+[gd_scene load_steps=8 format=4 uid="uid://6qhic2l5162h"]
 
 [ext_resource type="Script" uid="uid://cymcltac60k00" path="res://levels/level_base.gd" id="1_20opy"]
 [ext_resource type="PackedScene" uid="uid://cckps312nbpr0" path="res://Mechanics/background.tscn" id="2_8l0e1"]
-[ext_resource type="TileSet" uid="uid://kmw17olhu57o" path="res://Mechanics/tile_map.tres" id="3_lfnxh"]
+[ext_resource type="TileSet" uid="uid://cmk0q3v4fpxvl" path="res://Mechanics/tile_map.tres" id="3_lfnxh"]
 [ext_resource type="PackedScene" uid="uid://dwee3322pm225" path="res://Mechanics/player_2.tscn" id="4_ofchu"]
 [ext_resource type="Script" uid="uid://dq60fcyps0ayg" path="res://ice_manager.gd" id="5_jq78i"]
 [ext_resource type="PackedScene" uid="uid://bslqjgh6b6nym" path="res://gameObject/ice_deposit.tscn" id="6_8l0e1"]

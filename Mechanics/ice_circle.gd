@@ -22,8 +22,9 @@ var current_health = 50
 
 func _ready() -> void:
 	current_health = full_health
-	ice_bar.value = full_health
 	ice_bar.max_value = full_health
+	ice_bar.value = full_health
+	
 
 
 func _physics_process(delta: float) -> void:

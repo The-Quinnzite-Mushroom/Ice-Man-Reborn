@@ -19,6 +19,7 @@ bg_color = Color(0.284696, 0.605739, 0.987152, 1)
 [node name="iceCircle" type="Node2D"]
 script = ExtResource("1_viygt")
 ice_placement_radius = 20
+placement_cost = 4.0
 
 [node name="icePlacementIndictor" type="MeshInstance2D" parent="."]
 mesh = SubResource("QuadMesh_viygt")

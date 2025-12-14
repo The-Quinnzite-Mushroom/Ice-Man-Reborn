@@ -1,6 +1,6 @@
 extends Node
 
-const LAST_LEVEL = 3 # When player gets to the end of this level they win
+const LAST_LEVEL = 4 # When player gets to the end of this level they win
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
