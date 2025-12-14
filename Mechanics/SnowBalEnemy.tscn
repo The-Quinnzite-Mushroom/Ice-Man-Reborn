@@ -11,6 +11,11 @@ const SNOWBALL_SCENE: PackedScene = preload(\"res://Mechanics/snowball.tscn\")
 var thrown: bool = false
 var can_throw: bool = false
 
+@export var timer_seconds = 1.0
+
+func _ready() -> void:
+	timer.wait_time = timer_seconds
+
 func _physics_process(_delta: float) -> void:
 	if can_throw and not thrown:
 		if homing:

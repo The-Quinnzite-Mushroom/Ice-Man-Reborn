@@ -139,21 +139,38 @@ character_body_2d = NodePath("../Player2")
 
 [node name="SnowBalEnemy" parent="Node2D" instance=ExtResource("3_0srwa")]
 position = Vector2(233, -74)
+timer_seconds = 0.1
+direction = Vector2(1, 0)
 
 [node name="SnowBalEnemy2" parent="Node2D" instance=ExtResource("3_0srwa")]
-position = Vector2(293, -80)
+position = Vector2(420, -76)
+timer_seconds = 0.1
+direction = Vector2(1, 0)
 
 [node name="SnowBalEnemy3" parent="Node2D" instance=ExtResource("3_0srwa")]
-position = Vector2(339, -78)
+position = Vector2(343, -81)
+timer_seconds = 0.1
+direction = Vector2(1, 0)
 
 [node name="SnowBalEnemy4" parent="Node2D" instance=ExtResource("3_0srwa")]
-position = Vector2(385, -85)
+position = Vector2(463, -88)
+timer_seconds = 0.1
+direction = Vector2(1, 0)
 
 [node name="SnowBalEnemy5" parent="Node2D" instance=ExtResource("3_0srwa")]
-position = Vector2(419, -84)
+position = Vector2(538, -89)
+timer_seconds = 0.1
+direction = Vector2(1, 0)
 
 [node name="SnowBalEnemy6" parent="Node2D" instance=ExtResource("3_0srwa")]
-position = Vector2(467, -91)
+position = Vector2(386, -80)
+timer_seconds = 0.1
+direction = Vector2(1, 0)
+
+[node name="SnowBalEnemy7" parent="Node2D" instance=ExtResource("3_0srwa")]
+position = Vector2(571, -64)
+timer_seconds = 0.1
+direction = Vector2(1, 0)
 
 [node name="ice_deposit" parent="." instance=ExtResource("5_5722l")]
 position = Vector2(722, 0)
