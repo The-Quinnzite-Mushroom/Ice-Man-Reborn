@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://h6yhktj60f3o"]
+
+[ext_resource type="Texture2D" uid="uid://djl5pa40oerdq" path="res://art/snow_screen_2.png" id="1_56um0"]
+
+[node name="SnowScreen" type="CanvasLayer"]
+scale = Vector2(4, 4)
+transform = Transform2D(4, 0, 0, 4, 0, 0)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(169.25, -257.75)
+amount = 4
+texture = ExtResource("1_56um0")
+lifetime = 14.0
+direction = Vector2(0, 1)
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 50.0
