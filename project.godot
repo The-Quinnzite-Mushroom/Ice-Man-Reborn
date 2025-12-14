@@ -29,6 +29,7 @@ project/assembly_name="New Game Project"
 
 projectile=""
 spikes=""
+Player=""
 
 [input]
 

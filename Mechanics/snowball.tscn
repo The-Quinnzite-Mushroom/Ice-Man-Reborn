@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c35328bfen8hr"]
+[gd_scene load_steps=5 format=3 uid="uid://c35328bfen8hr"]
+
+[ext_resource type="Texture2D" uid="uid://djl5pa40oerdq" path="res://art/snow_screen_2.png" id="1_1m55f"]
 
 [sub_resource type="GDScript" id="GDScript_ly7p2"]
 script/source = "extends Area2D
@@ -25,16 +27,25 @@ func _draw():
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group(\"Player\"):
+		print(\"Hit Player\")
 		body.velocity /= 2
 		queue_free()
 		
-
-
 func _on_timer_timeout() -> void:
+	queue_free()
+
+func _on_area_entered(area: Area2D) -> void:
+	$CPUParticles2D.visible = true
+	await get_tree().create_timer(0.5).timeout
+	if is_instance_valid(area) and area.is_in_group(\"Player\"):
+		print(\"Hit Player\")
+		area.get_parent().velocity /= 2
 	queue_free()
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ly7p2"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_1m55f"]
 
 [node name="Snowball" type="Area2D" groups=["projectile"]]
 script = SubResource("GDScript_ly7p2")
@@ -46,4 +57,25 @@ shape = SubResource("CircleShape2D_ly7p2")
 wait_time = 15.0
 autostart = true
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+visible = false
+scale = Vector2(0.2, 0.2)
+skew = -1.569051
+amount = 1
+texture = ExtResource("1_1m55f")
+initial_velocity_max = 16.1
+damping_min = 1.245
+damping_max = 27.835
+angle_min = 600.0
+angle_max = 600.0
+scale_amount_min = 0.1
+scale_amount_max = 0.1
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 1, 1, 0.26666668)
+texture = SubResource("ImageTexture_1m55f")
+texture_scale = 17.51
+height = 1.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
