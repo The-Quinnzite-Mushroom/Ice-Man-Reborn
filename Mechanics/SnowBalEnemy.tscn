@@ -8,7 +8,7 @@ const SNOWBALL_SCENE: PackedScene = preload(\"res://Mechanics/snowball.tscn\")
 @export var homing: bool = true
 @export var throw_speed: float = 700
 @export var random_throw_angle_range: float = 45
-@export var lock_on_node: String = \"\"
+@export var lock_on_node: Node2D
 var thrown: bool = false
 var can_throw: bool = false
 
@@ -20,22 +20,20 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if can_throw and not thrown:
 		if homing:
-			var object = get_lock_on_object()
-			if object:
-				lock_in_player(object)
+			if is_lock_on_object():
+				lock_in_object(lock_on_node)
 				return
 			var player = get_player()
 			if player:
-				lock_in_player(player)
+				lock_in_object(player)
 				return
 		else:
 			throw_randomly()
 		
-func lock_in_player(player):
-	if player is CharacterBody2D:
-		var to_player_direction = (player.global_position - global_position).normalized()
-		var velocity = to_player_direction * throw_speed
-		fire_snowball(velocity)
+func lock_in_object(node):
+	var to_node_direction = (node.global_position - global_position).normalized()
+	var velocity = to_node_direction * throw_speed
+	fire_snowball(velocity)
 	
 func throw_randomly():
 	var angle_degrees = randf() * random_throw_angle_range - random_throw_angle_range / 2
@@ -43,11 +41,10 @@ func throw_randomly():
 	var velocity = Vector2(throw_speed, 0).rotated(angle_radians)
 	fire_snowball(velocity)
 	
-func get_lock_on_object():
-	var all_nodes = get_tree().find_node(lock_on_node, true)
-	if all_nodes.size() > 0:
-		return all_nodes[0]
-	return null
+func is_lock_on_object():
+	if lock_on_node:
+		return true
+	return false
 
 func get_player():
 	var all_nodes = get_tree().get_nodes_in_group(\"Player\")
