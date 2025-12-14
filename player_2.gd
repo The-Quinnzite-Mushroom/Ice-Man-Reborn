@@ -86,7 +86,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_player_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("projectile"):
-		ice_circle.take_damage(20)
+		ice_circle.take_damage(100)
 		velocity /= 2
 	if area.is_in_group("spikes"):
 		ice_circle.take_damage(1000)
