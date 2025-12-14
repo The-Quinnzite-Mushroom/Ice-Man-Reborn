@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 @onready var ice_circle: Node2D = $iceCircle
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var blood_particles: CPUParticles2D = $bloodParticles
 
 
 const SPEED = 300.0
@@ -15,6 +17,9 @@ const TEMPVECTOR = Vector2(0,1)
 const RUNNING_ANIMATION_SPEEDUP = 2
 const RUN_TILT = PI/ 8
 
+
+func _ready() -> void:
+	ice_circle.out_of_ice.connect(player_dead)
 #wwd wdawdad
 
 #Returns the proportion of how sped up the character is
@@ -85,5 +90,27 @@ func _on_player_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("spikes"):
 		ice_circle.take_damage(1000)
 	
+func player_dead():
 	
-		
+	
+	
+	var death_timer = Timer.new()
+	death_timer.wait_time = 0.5
+	death_timer.one_shot = true
+	add_child(death_timer)
+	death_timer.timeout.connect(restart_level)
+	
+	animated_sprite_2d.visible = false
+	print("player should die")
+	
+	blood_particles.emitting = true
+	
+	#var death_tween = create_tween()
+	#death_tween.tween_property(animated_sprite_2d, "modulate:a", 0.0, 0.4)
+	
+	death_timer.start()
+	
+	
+
+func restart_level():
+	get_tree().reload_current_scene()

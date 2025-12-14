@@ -131,4 +131,22 @@ shape = SubResource("CapsuleShape2D_kuirs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_kuirs")
 
+[node name="bloodParticles" type="CPUParticles2D" parent="."]
+position = Vector2(-1, 5)
+emitting = false
+amount = 36
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+randomness = 0.27
+lifetime_randomness = 0.15
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(1, 1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 50.51
+color = Color(0.311933, 0.569011, 0.709164, 1)
+
 [connection signal="area_entered" from="playerArea" to="." method="_on_player_area_area_entered"]

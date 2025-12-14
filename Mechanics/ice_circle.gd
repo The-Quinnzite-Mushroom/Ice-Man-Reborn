@@ -1,7 +1,7 @@
 extends Node2D
 
 signal ice_placed(position: Vector3, rotation: Vector3)
-
+signal out_of_ice()
 
 @onready var ice_placement_indictor: MeshInstance2D = $icePlacementIndictor
 @onready var ice_rectangle: Node2D = $IceRectangle
@@ -42,20 +42,17 @@ func take_damage(damage):
 	ice_bar.value = current_health
 	
 	if current_health <= 0.0:
-		get_tree().reload_current_scene()
+		out_of_ice.emit()
+		print("signal")
 	
 
 func spawn_ice_rectangle():
 	ice_placed.emit((mouse_direction*ice_placement_radius) + global_position, ice_placement_direction.angle())
 	current_health -= placement_cost
 	ice_bar.value = current_health
-	
+	print(current_health)
 	if current_health <= 0.0:
-		get_tree().reload_current_scene()
-	
-
-
-
+		out_of_ice.emit()
 
 func get_mouse_direction():
 	var mouse_pos = get_global_mouse_position()
