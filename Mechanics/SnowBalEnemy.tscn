@@ -8,6 +8,7 @@ const SNOWBALL_SCENE: PackedScene = preload(\"res://Mechanics/snowball.tscn\")
 @export var homing: bool = true
 @export var throw_speed: float = 700
 @export var random_throw_angle_range: float = 45
+@export var lock_on_node: String = \"\"
 var thrown: bool = false
 var can_throw: bool = false
 
@@ -19,9 +20,14 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if can_throw and not thrown:
 		if homing:
+			var object = get_lock_on_object()
+			if object:
+				lock_in_player(object)
+				return
 			var player = get_player()
 			if player:
 				lock_in_player(player)
+				return
 		else:
 			throw_randomly()
 		
@@ -37,6 +43,12 @@ func throw_randomly():
 	var velocity = Vector2(throw_speed, 0).rotated(angle_radians)
 	fire_snowball(velocity)
 	
+func get_lock_on_object():
+	var all_nodes = get_tree().find_node(lock_on_node, true)
+	if all_nodes.size() > 0:
+		return all_nodes[0]
+	return null
+
 func get_player():
 	var all_nodes = get_tree().get_nodes_in_group(\"Player\")
 	if all_nodes.size() > 0:
