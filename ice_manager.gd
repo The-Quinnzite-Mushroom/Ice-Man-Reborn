@@ -70,7 +70,7 @@ func projectile_hit_ice_rectangle(projectile_position, projectile_hit_radius):
 
 func remove_ice_rectangle(ice_rectangle_id):
 	
-	print(ice_rectangles)
+	#print(ice_rectangles)
 
 	for i in range(len(ice_rectangles)):
 		
