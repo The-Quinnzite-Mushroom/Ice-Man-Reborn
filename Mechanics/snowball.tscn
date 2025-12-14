@@ -56,6 +56,7 @@ wait_time = 15.0
 autostart = true
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+visible = false
 scale = Vector2(0.2, 0.2)
 skew = -1.569051
 amount = 1
