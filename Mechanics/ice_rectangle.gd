@@ -23,9 +23,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-
-
 func _on_melt_timer_timeout() -> void:
 	remove_self()
 	
@@ -39,3 +36,11 @@ func _on_projectile_detector_area_entered(area: Area2D) -> void:
 	if area.is_in_group("projectile"):
 		area.queue_free()
 		ice_hit.emit(global_position, 10)
+	if area.is_in_group("heat zone"):
+		print("entered heat zone")
+		var tween = create_tween()
+		tween.tween_property(ice_sprite, "modulate:a", 0.0, melting_time / 10.0)
+	
+		melt_timer.wait_time = melting_time / 10.0
+		melt_timer.start()
+		

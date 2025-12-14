@@ -16,13 +16,15 @@ var spawning_ice: bool = false
 
 @export var full_health = 50.0
 @export var placement_cost = 0.5
-var current_health = 50
+@export var current_health = 50
+@export var use_full_health: bool = true
 
 
 func _ready() -> void:
-	current_health = full_health
+	if use_full_health:
+		current_health = full_health
 	ice_bar.max_value = full_health
-	ice_bar.value = full_health
+	ice_bar.value = current_health
 	
 
 

@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://bwxmyfgulpvoo"]
+
+[ext_resource type="Shader" uid="uid://ceha2k2kaple3" path="res://gameObject/heat_zone_background.gdshader" id="1_1d0li"]
+[ext_resource type="Shader" uid="uid://dbre4hh8dqb3n" path="res://gameObject/heat_zone.gdshader" id="1_qi7bl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vltac"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iwo76"]
+shader = ExtResource("1_1d0li")
+shader_parameter/border = 0.1
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qi7bl"]
+noise_type = 3
+seed = 1
+frequency = 0.0057
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1d0li"]
+noise = SubResource("FastNoiseLite_qi7bl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_poc8o"]
+shader = ExtResource("1_qi7bl")
+shader_parameter/pixel_size = 64.0
+shader_parameter/strength = 0.019
+shader_parameter/speed = 5.0
+shader_parameter/scale = 13.634
+shader_parameter/heat_texture = SubResource("NoiseTexture2D_1d0li")
+
+[node name="heat_zone" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="." groups=["heat zone"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_vltac")
+
+[node name="heatBackground" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_iwo76")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 12.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.92343, 0.958228)
+color = Color(1, 0, 0, 0.192157)
+
+[node name="heatDistortion" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_poc8o")
+offset_left = -9.0
+offset_top = -9.0
+offset_right = 9.0
+offset_bottom = 9.0
