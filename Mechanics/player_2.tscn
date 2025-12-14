@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dwee3322pm225"]
+[gd_scene load_steps=22 format=3 uid="uid://dwee3322pm225"]
 
 [ext_resource type="Script" uid="uid://c0v12wnaj0ov2" path="res://player_2.gd" id="1_gm7yn"]
 [ext_resource type="Texture2D" uid="uid://d3thbyuyxjd2p" path="res://art/new_player.png" id="2_8kruf"]
@@ -112,6 +112,17 @@ animations = [{
 radius = 7.685
 height = 25.12
 
+[sub_resource type="Gradient" id="Gradient_8kruf"]
+offsets = PackedFloat32Array(0, 0.87333333, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.8666667, 0.8666667, 0.8666667, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_th7op"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8kruf"]
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_th7op")
+color_ramp = SubResource("Gradient_8kruf")
+
 [node name="Player2" type="CharacterBody2D"]
 script = ExtResource("1_gm7yn")
 
@@ -148,5 +159,11 @@ gravity = Vector2(0, 0)
 initial_velocity_min = 20.0
 initial_velocity_max = 50.51
 color = Color(0.311933, 0.569011, 0.709164, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-1, 5)
+color = Color(1, 1, 1, 0.13725491)
+energy = 0.5
+texture = SubResource("NoiseTexture2D_8kruf")
 
 [connection signal="area_entered" from="playerArea" to="." method="_on_player_area_area_entered"]
