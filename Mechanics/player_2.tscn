@@ -112,7 +112,7 @@ animations = [{
 radius = 7.685
 height = 25.12
 
-[node name="Player2" type="CharacterBody2D" groups=["Player"]]
+[node name="Player2" type="CharacterBody2D"]
 script = ExtResource("1_gm7yn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -123,7 +123,7 @@ animation = &"idle"
 [node name="iceCircle" parent="." instance=ExtResource("3_8kruf")]
 full_health = 1000.0
 
-[node name="playerArea" type="Area2D" parent="."]
+[node name="playerArea" type="Area2D" parent="." groups=["Player"]]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="playerArea"]
 shape = SubResource("CapsuleShape2D_kuirs")
