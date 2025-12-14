@@ -28,6 +28,10 @@ func _on_body_entered(body: Node2D) -> void:
 		body.velocity /= 2
 		queue_free()
 		
+
+
+func _on_timer_timeout() -> void:
+	queue_free()
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ly7p2"]
@@ -37,3 +41,9 @@ script = SubResource("GDScript_ly7p2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ly7p2")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
