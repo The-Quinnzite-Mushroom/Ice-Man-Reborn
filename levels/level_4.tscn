@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://cxyf20a3dh3ah"]
+[gd_scene load_steps=9 format=4 uid="uid://cxyf20a3dh3ah"]
 
 [ext_resource type="Script" uid="uid://cymcltac60k00" path="res://levels/level_base.gd" id="1_hokjj"]
 [ext_resource type="PackedScene" uid="uid://cckps312nbpr0" path="res://Mechanics/background.tscn" id="1_t0qhu"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dwee3322pm225" path="res://Mechanics/player_2.tscn" id="3_hokjj"]
 [ext_resource type="Script" uid="uid://dq60fcyps0ayg" path="res://ice_manager.gd" id="4_0fd8o"]
 [ext_resource type="PackedScene" uid="uid://bslqjgh6b6nym" path="res://gameObject/ice_deposit.tscn" id="5_t6q73"]
+[ext_resource type="PackedScene" uid="uid://26uuuhcisuvo" path="res://gameObject/spike_area.tscn" id="7_0fd8o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmnu2"]
 size = Vector2(17, 16)
@@ -43,5 +44,9 @@ character_body_2d = NodePath("../Player2")
 
 [node name="ice_deposit" parent="." instance=ExtResource("5_t6q73")]
 position = Vector2(869, 0)
+
+[node name="spikeArea" parent="." instance=ExtResource("7_0fd8o")]
+position = Vector2(278, 120)
+scale = Vector2(1.34029, 1)
 
 [connection signal="area_entered" from="LevelExit" to="." method="_on_level_exit_area_entered"]
