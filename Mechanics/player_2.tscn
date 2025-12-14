@@ -120,7 +120,12 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_th7op")
 animation = &"idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="iceCircle" parent="." instance=ExtResource("3_8kruf")]
+
+[node name="playerArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="playerArea"]
 shape = SubResource("CapsuleShape2D_kuirs")
 
-[node name="iceCircle" parent="." instance=ExtResource("3_8kruf")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_kuirs")
