@@ -89,9 +89,43 @@ position = Vector2(1165, -317)
 timer_seconds = 0.1
 direction = Vector2(1, 0)
 
+[node name="SnowBalEnemy15" parent="enemies" instance=ExtResource("6_k2ajo")]
+position = Vector2(1193, -317)
+timer_seconds = 0.1
+direction = Vector2(1, 0)
+
+[node name="SnowBalEnemy16" parent="enemies" instance=ExtResource("6_k2ajo")]
+position = Vector2(1138, -317)
+timer_seconds = 0.1
+direction = Vector2(1, 0)
+
 [node name="SnowBalEnemy6" parent="enemies" node_paths=PackedStringArray("lock_on_node") instance=ExtResource("6_k2ajo")]
 position = Vector2(1584, -11)
 lock_on_node = NodePath("../target6")
+timer_seconds = 0.1
+direction = Vector2(1, 0)
+
+[node name="SnowBalEnemy17" parent="enemies" node_paths=PackedStringArray("lock_on_node") instance=ExtResource("6_k2ajo")]
+position = Vector2(1665, -651)
+lock_on_node = NodePath("../target8")
+timer_seconds = 0.1
+direction = Vector2(1, 0)
+
+[node name="SnowBalEnemy18" parent="enemies" node_paths=PackedStringArray("lock_on_node") instance=ExtResource("6_k2ajo")]
+position = Vector2(1716, -652)
+lock_on_node = NodePath("../target11")
+timer_seconds = 0.1
+direction = Vector2(1, 0)
+
+[node name="SnowBalEnemy13" parent="enemies" node_paths=PackedStringArray("lock_on_node") instance=ExtResource("6_k2ajo")]
+position = Vector2(1564, -11)
+lock_on_node = NodePath("../target10")
+timer_seconds = 0.1
+direction = Vector2(1, 0)
+
+[node name="SnowBalEnemy14" parent="enemies" node_paths=PackedStringArray("lock_on_node") instance=ExtResource("6_k2ajo")]
+position = Vector2(1702, -12)
+lock_on_node = NodePath("../target11")
 timer_seconds = 0.1
 direction = Vector2(1, 0)
 
@@ -110,6 +144,12 @@ direction = Vector2(1, 0)
 [node name="target6" type="Node2D" parent="enemies"]
 position = Vector2(1592, -555)
 
+[node name="target10" type="Node2D" parent="enemies"]
+position = Vector2(1582, -555)
+
+[node name="target11" type="Node2D" parent="enemies"]
+position = Vector2(1705, -552)
+
 [node name="SnowBalEnemy7" parent="enemies" node_paths=PackedStringArray("lock_on_node") instance=ExtResource("6_k2ajo")]
 position = Vector2(1680, -13)
 lock_on_node = NodePath("../target7")
@@ -127,6 +167,12 @@ position = Vector2(1628, -552)
 
 [node name="ice_deposit" parent="." instance=ExtResource("7_6kkia")]
 position = Vector2(652, -326)
+
+[node name="ice_deposit2" parent="." instance=ExtResource("7_6kkia")]
+position = Vector2(1504, -439)
+
+[node name="ice_deposit3" parent="." instance=ExtResource("7_6kkia")]
+position = Vector2(2131, -136)
 
 [node name="spikeArea" parent="." instance=ExtResource("8_qnp4g")]
 position = Vector2(508, 17)
