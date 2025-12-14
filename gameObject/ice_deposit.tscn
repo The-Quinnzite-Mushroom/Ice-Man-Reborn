@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bslqjgh6b6nym"]
+[gd_scene load_steps=4 format=3 uid="uid://bslqjgh6b6nym"]
 
 [ext_resource type="Script" uid="uid://b8qtjtcakwfbl" path="res://gameObject/ice_deposit.gd" id="1_a7mio"]
+[ext_resource type="Texture2D" uid="uid://bxuvqes0fsm8o" path="res://art/ice_deposit.png" id="2_q4t66"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1mgml"]
 
@@ -13,5 +14,6 @@ script = ExtResource("1_a7mio")
 shape = SubResource("RectangleShape2D_1mgml")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_q4t66")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

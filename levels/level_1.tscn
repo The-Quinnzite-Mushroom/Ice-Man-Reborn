@@ -34,6 +34,7 @@ tile_set = ExtResource("3_bt44k")
 [node name="Player2" parent="." instance=ExtResource("4_kx6l7")]
 
 [node name="Camera2D" type="Camera2D" parent="Player2"]
+zoom = Vector2(2, 2)
 
 [node name="ice_manager" type="Node2D" parent="." node_paths=PackedStringArray("character_body_2d")]
 script = ExtResource("5_gwceb")
