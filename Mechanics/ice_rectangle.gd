@@ -38,4 +38,4 @@ func remove_self():
 func _on_projectile_detector_area_entered(area: Area2D) -> void:
 	if area.is_in_group("projectile"):
 		area.queue_free()
-		ice_hit.emit(area.global_position, 3)
+		ice_hit.emit(global_position, 10)

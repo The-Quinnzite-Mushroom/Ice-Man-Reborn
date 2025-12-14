@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.is_in_group("player collision"):
+	if area.is_in_group("Player"):
 		
 		var ice_circle = area.get_node("./../iceCircle")
 		ice_circle.current_health = ice_circle.full_health

@@ -121,8 +121,9 @@ sprite_frames = SubResource("SpriteFrames_th7op")
 animation = &"idle"
 
 [node name="iceCircle" parent="." instance=ExtResource("3_8kruf")]
+full_health = 1000.0
 
-[node name="playerArea" type="Area2D" parent="."]
+[node name="playerArea" type="Area2D" parent="." groups=["Player"]]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="playerArea"]
 shape = SubResource("CapsuleShape2D_kuirs")
