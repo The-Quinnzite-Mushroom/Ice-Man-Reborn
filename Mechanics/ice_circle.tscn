@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvl64iexctv0e"]
+[gd_scene load_steps=9 format=3 uid="uid://cvl64iexctv0e"]
 
 [ext_resource type="Script" uid="uid://5mgxu4rfrk1s" path="res://Mechanics/ice_circle.gd" id="1_viygt"]
+[ext_resource type="Texture2D" uid="uid://d5hy47sb31ue" path="res://art/UI/ice_bar.png" id="2_7m5dk"]
 [ext_resource type="AudioStream" uid="uid://dwcyebw3wsyns" path="res://audio/ice deposit.wav" id="2_xy3n8"]
 [ext_resource type="Texture2D" uid="uid://br5gctxap2luy" path="res://art/mouse_indicator.png" id="3_hms24"]
 
@@ -42,6 +43,10 @@ theme_override_styles/background = SubResource("StyleBoxFlat_viygt")
 theme_override_styles/fill = SubResource("StyleBoxFlat_xy3n8")
 value = 100.0
 show_percentage = false
+
+[node name="Ice Empty" type="Sprite2D" parent="CanvasLayer/MarginContainer"]
+position = Vector2(48, 22)
+texture = ExtResource("2_7m5dk")
 
 [node name="PickupSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_xy3n8")

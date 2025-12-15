@@ -412,3 +412,5 @@ scale = Vector2(0.44, 1)
 [node name="spikeArea36" parent="spikes" instance=ExtResource("6_1y5xd")]
 position = Vector2(6246, 113)
 scale = Vector2(0.44, 1)
+
+[connection signal="area_entered" from="LevelExit" to="." method="_on_level_exit_area_entered"]

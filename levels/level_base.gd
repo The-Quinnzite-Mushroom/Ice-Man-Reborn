@@ -19,6 +19,7 @@ func go_to_next_level():
 	if level_num == LAST_LEVEL:
 		get_tree().change_scene_to_file("res://levels/win_screen.tscn")
 	else:
+		print("leveing level",level_num)
 		get_tree().change_scene_to_file("res://levels/level_"+str(sneaky_level_getter()+1)+".tscn")
 
 func reload_level():
