@@ -247,4 +247,15 @@ theme_override_font_sizes/font_size = 12
 text = "Use ice as defence
 "
 
+[node name="Heat Melts Ice Quicker" type="Label" parent="."]
+offset_left = 2678.0
+offset_top = -154.0
+offset_right = 2823.0
+offset_bottom = -127.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("10_sd18g")
+theme_override_font_sizes/font_size = 12
+text = "Heat Melts Ice Quicker
+"
+
 [connection signal="area_entered" from="LevelExit" to="." method="_on_level_exit_area_entered"]
