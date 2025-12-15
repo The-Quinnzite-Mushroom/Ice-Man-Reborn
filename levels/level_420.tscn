@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://c6gab606vne2s"]
+[gd_scene load_steps=11 format=4 uid="uid://de3k3uc4j7ubj"]
 
 [ext_resource type="Script" uid="uid://cymcltac60k00" path="res://levels/level_base.gd" id="1_o4oop"]
 [ext_resource type="PackedScene" uid="uid://cckps312nbpr0" path="res://Mechanics/background.tscn" id="2_fx443"]
@@ -53,35 +53,35 @@ character_body_2d = NodePath("../Player2")
 
 [node name="spikeArea" parent="." instance=ExtResource("7_j4eu2")]
 position = Vector2(2105, -228)
-scale = Vector2(11.50029, 1)
+scale = Vector2(11.5003, 1)
 
 [node name="spikeArea8" parent="." instance=ExtResource("7_j4eu2")]
 position = Vector2(2773, -338)
-scale = Vector2(11.50029, 1)
+scale = Vector2(11.5003, 1)
 
 [node name="spikeArea7" parent="." instance=ExtResource("7_j4eu2")]
-position = Vector2(5684, -672.99994)
-scale = Vector2(0.38028967, 34.12)
+position = Vector2(5684, -673)
+scale = Vector2(0.38029, 34.12)
 
 [node name="spikeArea4" parent="." instance=ExtResource("7_j4eu2")]
-position = Vector2(4341.0005, -340.00003)
-scale = Vector2(-28.984138, 1.6214027)
+position = Vector2(4341, -340)
+scale = Vector2(-28.9841, 1.6214)
 
 [node name="spikeArea5" parent="." instance=ExtResource("7_j4eu2")]
-position = Vector2(3624.0002, -820)
-scale = Vector2(-45.18149, 0.9002436)
+position = Vector2(3624, -820)
+scale = Vector2(-45.1815, 0.900244)
 
 [node name="spikeArea6" parent="." instance=ExtResource("7_j4eu2")]
-position = Vector2(1950, -819.00006)
-scale = Vector2(-45.18149, 0.9002436)
+position = Vector2(1950, -819)
+scale = Vector2(-45.1815, 0.900244)
 
 [node name="spikeArea3" parent="." instance=ExtResource("7_j4eu2")]
-position = Vector2(563.00006, -1)
-scale = Vector2(7.7140045, 0.89440346)
+position = Vector2(563, -1)
+scale = Vector2(7.714, 0.894403)
 
 [node name="spikeArea2" parent="." instance=ExtResource("7_j4eu2")]
-position = Vector2(1228.0001, -113)
-scale = Vector2(7.428369, -1.0683296)
+position = Vector2(1228, -113)
+scale = Vector2(7.42837, -1.06833)
 
 [node name="ice_deposit" parent="." instance=ExtResource("7_o4oop")]
 position = Vector2(5639, -347)
@@ -108,7 +108,7 @@ position = Vector2(2983, -910)
 position = Vector2(2901, -909)
 
 [node name="heat_zone" parent="." instance=ExtResource("8_fx443")]
-position = Vector2(5646.999, -676.00006)
-scale = Vector2(2.8939455, 34.362247)
+position = Vector2(5647, -676)
+scale = Vector2(2.89395, 34.3622)
 
 [connection signal="area_entered" from="LevelExit" to="." method="_on_level_exit_area_entered"]
