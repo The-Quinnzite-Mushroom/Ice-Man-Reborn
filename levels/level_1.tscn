@@ -5,7 +5,7 @@
 [ext_resource type="TileSet" uid="uid://cmk0q3v4fpxvl" path="res://Mechanics/tile_map.tres" id="3_bt44k"]
 [ext_resource type="PackedScene" uid="uid://dwee3322pm225" path="res://Mechanics/player_2.tscn" id="4_kx6l7"]
 [ext_resource type="Script" uid="uid://dq60fcyps0ayg" path="res://ice_manager.gd" id="5_gwceb"]
-[ext_resource type="PackedScene" uid="uid://h6yhktj60f3o" path="res://Mechanics/snow_screen.tscn" id="6_btoec"]
+[ext_resource type="PackedScene" path="res://Mechanics/snow_screen.tscn" id="6_btoec"]
 [ext_resource type="PackedScene" uid="uid://26uuuhcisuvo" path="res://gameObject/spike_area.tscn" id="7_gwceb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bt44k"]
@@ -50,11 +50,11 @@ position = Vector2(280, 120)
 scale = Vector2(1.34029, 1)
 
 [node name="spikeArea3" parent="." instance=ExtResource("7_gwceb")]
-position = Vector2(703.00037, 126)
-scale = Vector2(7.7749467, 1.1278248)
+position = Vector2(703, 126)
+scale = Vector2(7.77495, 1.12782)
 
 [node name="spikeArea2" parent="." instance=ExtResource("7_gwceb")]
 position = Vector2(1289, 114)
-scale = Vector2(7.428369, -1.061991)
+scale = Vector2(7.42837, -1.06199)
 
 [connection signal="area_entered" from="LevelExit" to="." method="_on_level_exit_area_entered"]

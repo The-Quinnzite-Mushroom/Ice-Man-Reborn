@@ -155,15 +155,15 @@ radius = 7.685
 height = 25.12
 
 [sub_resource type="Gradient" id="Gradient_8kruf"]
-offsets = PackedFloat32Array(0, 0.87333333, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.8666667, 0.8666667, 0.8666667, 1, 1, 1, 1, 1)
+offsets = PackedFloat32Array(0, 0.873333, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.866667, 0.866667, 0.866667, 1, 1, 1, 1, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_th7op"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8kruf"]
 generate_mipmaps = false
-noise = SubResource("FastNoiseLite_th7op")
 color_ramp = SubResource("Gradient_8kruf")
+noise = SubResource("FastNoiseLite_th7op")
 
 [node name="Player2" type="CharacterBody2D"]
 script = ExtResource("1_gm7yn")
@@ -204,7 +204,7 @@ color = Color(0.311933, 0.569011, 0.709164, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(-1, 5)
-color = Color(1, 1, 1, 0.13725491)
+color = Color(1, 1, 1, 0.137255)
 energy = 0.5
 texture = SubResource("NoiseTexture2D_8kruf")
 
