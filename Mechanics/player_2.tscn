@@ -1,9 +1,10 @@
-[gd_scene load_steps=29 format=3 uid="uid://dwee3322pm225"]
+[gd_scene load_steps=30 format=3 uid="uid://dwee3322pm225"]
 
 [ext_resource type="Script" uid="uid://c0v12wnaj0ov2" path="res://player_2.gd" id="1_gm7yn"]
 [ext_resource type="Texture2D" uid="uid://mfbcci7j6g3q" path="res://art/ice_player.png" id="2_8kruf"]
 [ext_resource type="PackedScene" uid="uid://cvl64iexctv0e" path="res://Mechanics/ice_circle.tscn" id="3_8kruf"]
 [ext_resource type="AudioStream" uid="uid://bythlyyawkwgf" path="res://audio/death.wav" id="4_th7op"]
+[ext_resource type="AudioStream" uid="uid://bngy2nkasljc8" path="res://audio/bgm.mp3" id="5_kuirs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_th7op"]
 atlas = ExtResource("2_8kruf")
@@ -163,8 +164,8 @@ colors = PackedColorArray(0, 0, 0, 1, 0.866667, 0.866667, 0.866667, 1, 1, 1, 1, 
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8kruf"]
 generate_mipmaps = false
-color_ramp = SubResource("Gradient_8kruf")
 noise = SubResource("FastNoiseLite_th7op")
+color_ramp = SubResource("Gradient_8kruf")
 
 [node name="Player2" type="CharacterBody2D"]
 script = ExtResource("1_gm7yn")
@@ -214,5 +215,10 @@ texture = SubResource("NoiseTexture2D_8kruf")
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_th7op")
 
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_kuirs")
+autoplay = true
+
 [connection signal="area_entered" from="playerArea" to="." method="_on_player_area_area_entered"]
 [connection signal="body_entered" from="playerArea" to="." method="_on_player_area_body_entered"]
+[connection signal="finished" from="Music" to="." method="_on_music_finished"]
