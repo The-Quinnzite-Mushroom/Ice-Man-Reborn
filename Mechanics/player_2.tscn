@@ -217,6 +217,7 @@ stream = ExtResource("4_th7op")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_kuirs")
+volume_db = -5.0
 autoplay = true
 
 [connection signal="area_entered" from="playerArea" to="." method="_on_player_area_area_entered"]

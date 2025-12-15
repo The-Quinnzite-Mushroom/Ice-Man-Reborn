@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=4 uid="uid://dk0pwi3g46lvl"]
+[gd_scene load_steps=10 format=4 uid="uid://dk0pwi3g46lvl"]
 
 [ext_resource type="Script" uid="uid://cymcltac60k00" path="res://levels/level_base.gd" id="1_kx6l7"]
 [ext_resource type="PackedScene" uid="uid://cckps312nbpr0" path="res://Mechanics/background.tscn" id="2_jirdo"]
 [ext_resource type="TileSet" uid="uid://cmk0q3v4fpxvl" path="res://Mechanics/tile_map.tres" id="3_bt44k"]
 [ext_resource type="PackedScene" uid="uid://dwee3322pm225" path="res://Mechanics/player_2.tscn" id="4_kx6l7"]
 [ext_resource type="Script" uid="uid://dq60fcyps0ayg" path="res://ice_manager.gd" id="5_gwceb"]
-[ext_resource type="PackedScene" path="res://Mechanics/snow_screen.tscn" id="6_btoec"]
+[ext_resource type="PackedScene" uid="uid://h6yhktj60f3o" path="res://Mechanics/snow_screen.tscn" id="6_btoec"]
 [ext_resource type="PackedScene" uid="uid://26uuuhcisuvo" path="res://gameObject/spike_area.tscn" id="7_gwceb"]
+[ext_resource type="FontFile" uid="uid://c2kxpenv3etbj" path="res://fonts/yoster.ttf" id="8_l53as"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bt44k"]
 size = Vector2(17, 16)
@@ -56,5 +57,16 @@ scale = Vector2(7.77495, 1.12782)
 [node name="spikeArea2" parent="." instance=ExtResource("7_gwceb")]
 position = Vector2(1289, 114)
 scale = Vector2(7.42837, -1.06199)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -41.0
+offset_top = -40.0
+offset_right = 45.0
+offset_bottom = -13.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_l53as")
+theme_override_font_sizes/font_size = 12
+text = "WAD to Move
+"
 
 [connection signal="area_entered" from="LevelExit" to="." method="_on_level_exit_area_entered"]
