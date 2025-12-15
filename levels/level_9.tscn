@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bwmjvb3og6tuw"]
+[gd_scene load_steps=10 format=4 uid="uid://domuio5y0uo0w"]
 
 [ext_resource type="PackedScene" uid="uid://cckps312nbpr0" path="res://Mechanics/background.tscn" id="1_076sl"]
 [ext_resource type="Script" uid="uid://cymcltac60k00" path="res://levels/level_base.gd" id="1_x8804"]
@@ -175,8 +175,8 @@ position = Vector2(291, -675)
 position = Vector2(306, -676)
 
 [node name="target13" type="Node2D" parent="enemies"]
-position = Vector2(329.99997, -674.99994)
-rotation = -0.33676836
+position = Vector2(330, -675)
+rotation = -0.336768
 
 [node name="SnowBalEnemy7" parent="enemies" node_paths=PackedStringArray("lock_on_node") instance=ExtResource("5_a4lof")]
 position = Vector2(301, -521)
@@ -206,7 +206,7 @@ position = Vector2(1504, -439)
 position = Vector2(2131, -136)
 
 [node name="spikeArea" parent="." instance=ExtResource("7_pf0k2")]
-position = Vector2(498.00003, 64)
+position = Vector2(498, 64)
 scale = Vector2(9.92, 6.403)
 
 [connection signal="area_entered" from="LevelExit" to="." method="_on_level_exit_area_entered"]

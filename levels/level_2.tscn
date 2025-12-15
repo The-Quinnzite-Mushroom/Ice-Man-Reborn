@@ -46,7 +46,7 @@ script = ExtResource("4_v5uil")
 character_body_2d = NodePath("../Player2")
 
 [node name="enemies" type="Node2D" parent="."]
-position = Vector2(17, -134)
+position = Vector2(25, -96)
 
 [node name="SnowBalEnemy" parent="enemies" node_paths=PackedStringArray("lock_on_node") instance=ExtResource("3_0srwa")]
 position = Vector2(233, -74)
@@ -188,19 +188,19 @@ position = Vector2(942, -63)
 direction = Vector2(1, 0)
 
 [node name="SnowBalEnemy17" parent="enemies" instance=ExtResource("3_0srwa")]
-position = Vector2(1592, -13)
+position = Vector2(1592, -37)
 direction = Vector2(1, 0)
 
 [node name="SnowBalEnemy18" parent="enemies" instance=ExtResource("3_0srwa")]
-position = Vector2(1902, -17)
+position = Vector2(1902, -39)
 direction = Vector2(1, 0)
 
 [node name="SnowBalEnemy19" parent="enemies" instance=ExtResource("3_0srwa")]
-position = Vector2(2045, -237)
+position = Vector2(2045, -276)
 direction = Vector2(1, 0)
 
 [node name="SnowBalEnemy20" parent="enemies" instance=ExtResource("3_0srwa")]
-position = Vector2(2187, 195)
+position = Vector2(2187, 171)
 direction = Vector2(1, 0)
 
 [node name="target16" type="Node2D" parent="enemies"]

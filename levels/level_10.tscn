@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://cfpa5hpicn17a"]
+[gd_scene load_steps=10 format=4 uid="uid://spsv2c3tnq5o"]
 
 [ext_resource type="Script" uid="uid://cymcltac60k00" path="res://levels/level_base.gd" id="1_5n8do"]
 [ext_resource type="TileSet" uid="uid://cmk0q3v4fpxvl" path="res://Mechanics/tile_map.tres" id="3_vndwe"]
@@ -99,19 +99,19 @@ direction = Vector2(1, 0)
 
 [node name="SnowBalEnemy5" parent="enemies" instance=ExtResource("6_bfq0i")]
 position = Vector2(500, -252)
-rotation = -0.043523613
+rotation = -0.0435236
 timer_seconds = 0.3
 direction = Vector2(1, 0)
 
 [node name="SnowBalEnemy6" parent="enemies" instance=ExtResource("6_bfq0i")]
 position = Vector2(746, -251)
-rotation = -0.043523613
+rotation = -0.0435236
 timer_seconds = 0.3
 direction = Vector2(1, 0)
 
 [node name="SnowBalEnemy7" parent="enemies" instance=ExtResource("6_bfq0i")]
 position = Vector2(910, -253)
-rotation = -0.043523613
+rotation = -0.0435236
 timer_seconds = 0.3
 direction = Vector2(1, 0)
 
@@ -128,30 +128,30 @@ position = Vector2(241, -398)
 position = Vector2(623, -397)
 
 [node name="ice_deposit25" parent="." instance=ExtResource("7_cr0e4")]
-position = Vector2(778, -397.00003)
-rotation = 0.06628668
+position = Vector2(778, -397)
+rotation = 0.0662867
 
 [node name="ice_deposit27" parent="." instance=ExtResource("7_cr0e4")]
-position = Vector2(846, -396.00006)
-rotation = 0.06628668
+position = Vector2(846, -396)
+rotation = 0.0662867
 
 [node name="ice_deposit34" parent="." instance=ExtResource("7_cr0e4")]
-position = Vector2(1118.9999, -395)
-rotation = 0.052171208
+position = Vector2(1119, -395)
+rotation = 0.0521712
 
 [node name="ice_deposit35" parent="." instance=ExtResource("7_cr0e4")]
-position = Vector2(1148.0001, -395.00006)
+position = Vector2(1148, -395)
 rotation = -0.802964
 
 [node name="ice_deposit2" parent="." instance=ExtResource("7_cr0e4")]
 position = Vector2(1404, -399)
 
 [node name="ice_deposit44" parent="." instance=ExtResource("7_cr0e4")]
-position = Vector2(1674, -395.99997)
-rotation = 1.5681185
+position = Vector2(1674, -396)
+rotation = 1.56812
 
 [node name="spikeArea" parent="." instance=ExtResource("8_wgo1c")]
-position = Vector2(498.00003, 64)
+position = Vector2(498, 64)
 scale = Vector2(9.92, 6.403)
 
 [connection signal="area_entered" from="LevelExit" to="." method="_on_level_exit_area_entered"]

@@ -179,7 +179,7 @@ position = Vector2(508, 17)
 scale = Vector2(9.92, 6.403)
 
 [node name="spikeArea2" parent="." instance=ExtResource("8_qnp4g")]
-position = Vector2(1012.9999, 50)
+position = Vector2(1013, 50)
 scale = Vector2(0.38, 6.273)
 
 [node name="spikeArea3" parent="." instance=ExtResource("8_qnp4g")]
@@ -187,11 +187,11 @@ position = Vector2(1078, 65)
 scale = Vector2(0.38, 6.273)
 
 [node name="spikeArea4" parent="." instance=ExtResource("8_qnp4g")]
-position = Vector2(1140, 112.00001)
+position = Vector2(1140, 112)
 scale = Vector2(0.355, 6.273)
 
 [node name="spikeArea5" parent="." instance=ExtResource("8_qnp4g")]
-position = Vector2(1693.0001, 116)
+position = Vector2(1693, 116)
 scale = Vector2(11.86, 3.558)
 
 [connection signal="area_entered" from="LevelExit" to="." method="_on_level_exit_area_entered"]
