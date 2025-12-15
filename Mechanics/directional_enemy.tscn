@@ -19,3 +19,6 @@ shape = SubResource("RectangleShape2D_1ad0j")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(-63, 0)
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+target_position = Vector2(65, 0)
