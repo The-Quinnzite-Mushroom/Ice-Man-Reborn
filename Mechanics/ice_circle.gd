@@ -5,7 +5,7 @@ signal out_of_ice()
 
 @onready var ice_placement_indictor = $icePlacementIndictor
 
-@onready var ice_bar: ProgressBar = $CanvasLayer/MarginContainer/IceBar
+@onready var ice_bar = $CanvasLayer/MarginContainer/IceBar
 
 
 @export var ice_placement_radius = 2

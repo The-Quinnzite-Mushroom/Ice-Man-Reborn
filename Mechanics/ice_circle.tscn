@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvl64iexctv0e"]
+[gd_scene load_steps=10 format=3 uid="uid://cvl64iexctv0e"]
 
 [ext_resource type="Script" uid="uid://5mgxu4rfrk1s" path="res://Mechanics/ice_circle.gd" id="1_viygt"]
 [ext_resource type="Texture2D" uid="uid://d5hy47sb31ue" path="res://art/UI/ice_bar.png" id="2_7m5dk"]
 [ext_resource type="AudioStream" uid="uid://dwcyebw3wsyns" path="res://audio/ice deposit.wav" id="2_xy3n8"]
 [ext_resource type="Texture2D" uid="uid://br5gctxap2luy" path="res://art/mouse_indicator.png" id="3_hms24"]
+[ext_resource type="Texture2D" uid="uid://bltx1ag22lfli" path="res://art/UI/ice_bar_filled.png" id="3_kqm80"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xy3n8"]
 vertex_color_use_as_albedo = true
@@ -30,13 +31,18 @@ mesh = SubResource("QuadMesh_viygt")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Ice Empty" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(48, 14)
+texture = ExtResource("2_7m5dk")
+
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 offset_right = 155.0
 offset_bottom = 40.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 
-[node name="IceBar" type="ProgressBar" parent="CanvasLayer/MarginContainer"]
+[node name="IceBar3" type="ProgressBar" parent="CanvasLayer/MarginContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_viygt")
@@ -44,9 +50,9 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_xy3n8")
 value = 100.0
 show_percentage = false
 
-[node name="Ice Empty" type="Sprite2D" parent="CanvasLayer/MarginContainer"]
-position = Vector2(48, 22)
-texture = ExtResource("2_7m5dk")
+[node name="IceBar" type="TextureProgressBar" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+texture_progress = ExtResource("3_kqm80")
 
 [node name="PickupSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_xy3n8")
