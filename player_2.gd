@@ -88,8 +88,10 @@ func _on_player_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("projectile"):
 		ice_circle.take_damage(100)
 		velocity /= 2
+		$DeathSound.play()
 	if area.is_in_group("spikes"):
 		ice_circle.take_damage(1000)
+		$DeathSound.play()
 	
 func player_dead():
 	
@@ -105,6 +107,7 @@ func player_dead():
 	print("player should die")
 	
 	blood_particles.emitting = true
+	
 	
 	#var death_tween = create_tween()
 	#death_tween.tween_property(animated_sprite_2d, "modulate:a", 0.0, 0.4)

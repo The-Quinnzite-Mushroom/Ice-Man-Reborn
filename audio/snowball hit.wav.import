@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://84ewwpdpy8vy"
+path="res://.godot/imported/snowball hit.wav-936e0bea6712767648bb6abba4abdacb.sample"
+
+[deps]
+
+source_file="res://audio/snowball hit.wav"
+dest_files=["res://.godot/imported/snowball hit.wav-936e0bea6712767648bb6abba4abdacb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

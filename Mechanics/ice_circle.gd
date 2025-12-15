@@ -60,6 +60,8 @@ func get_mouse_direction():
 	var direction = (mouse_pos - global_position).normalized()
 	
 	return direction
+func play_pickup():
+	$PickupSound.play()
 	
 func _input(event):
 	if event is InputEventMouseButton:

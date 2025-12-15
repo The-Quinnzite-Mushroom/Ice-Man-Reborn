@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvl64iexctv0e"]
+[gd_scene load_steps=7 format=3 uid="uid://cvl64iexctv0e"]
 
 [ext_resource type="Script" uid="uid://5mgxu4rfrk1s" path="res://Mechanics/ice_circle.gd" id="1_viygt"]
+[ext_resource type="AudioStream" uid="uid://dwcyebw3wsyns" path="res://audio/ice deposit.wav" id="2_xy3n8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xy3n8"]
 vertex_color_use_as_albedo = true
@@ -39,3 +40,6 @@ theme_override_styles/background = SubResource("StyleBoxFlat_viygt")
 theme_override_styles/fill = SubResource("StyleBoxFlat_xy3n8")
 value = 100.0
 show_percentage = false
+
+[node name="PickupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_xy3n8")
