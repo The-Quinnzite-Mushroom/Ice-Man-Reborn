@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bv7b6dmb2i86v"]
+[gd_scene load_steps=12 format=4 uid="uid://bv7b6dmb2i86v"]
 
 [ext_resource type="Script" uid="uid://cymcltac60k00" path="res://levels/level_base.gd" id="1_ep78u"]
 [ext_resource type="PackedScene" uid="uid://cckps312nbpr0" path="res://Mechanics/background.tscn" id="1_ilhis"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bslqjgh6b6nym" path="res://gameObject/ice_deposit.tscn" id="5_5722l"]
 [ext_resource type="PackedScene" uid="uid://bwxmyfgulpvoo" path="res://gameObject/heat_zone.tscn" id="8_dfjjl"]
 [ext_resource type="PackedScene" uid="uid://26uuuhcisuvo" path="res://gameObject/spike_area.tscn" id="9_at1ld"]
+[ext_resource type="FontFile" uid="uid://c2kxpenv3etbj" path="res://fonts/yoster.ttf" id="10_sd18g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dfjjl"]
 size = Vector2(17, 16)
@@ -234,5 +235,27 @@ scale = Vector2(-19.8275, 14.2272)
 [node name="spikeArea" parent="." instance=ExtResource("9_at1ld")]
 position = Vector2(3342, 7)
 scale = Vector2(12.48, 1)
+
+[node name="Use Ice as defence" type="Label" parent="."]
+offset_left = 46.0
+offset_top = -103.0
+offset_right = 166.0
+offset_bottom = -76.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("10_sd18g")
+theme_override_font_sizes/font_size = 12
+text = "Use ice as defence
+"
+
+[node name="Heat Melts Ice Quicker" type="Label" parent="."]
+offset_left = 2678.0
+offset_top = -154.0
+offset_right = 2823.0
+offset_bottom = -127.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("10_sd18g")
+theme_override_font_sizes/font_size = 12
+text = "Heat Melts Ice Quicker
+"
 
 [connection signal="area_entered" from="LevelExit" to="." method="_on_level_exit_area_entered"]
