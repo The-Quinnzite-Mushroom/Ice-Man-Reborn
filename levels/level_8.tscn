@@ -16,7 +16,7 @@ size = Vector2(17, 16)
 script = ExtResource("1_4gm13")
 
 [node name="Background" parent="." instance=ExtResource("2_qnp4g")]
-position = Vector2(140, -1226)
+position = Vector2(79, -1228)
 scale = Vector2(3, 3)
 
 [node name="LevelExit" type="Area2D" parent="."]
