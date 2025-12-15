@@ -118,3 +118,7 @@ func player_dead():
 
 func restart_level():
 	get_tree().reload_current_scene()
+
+
+func _on_music_finished() -> void:
+	$Music.play()
