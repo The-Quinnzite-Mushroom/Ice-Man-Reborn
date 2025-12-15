@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c35328bfen8hr"]
+[gd_scene load_steps=6 format=3 uid="uid://c35328bfen8hr"]
 
 [ext_resource type="Texture2D" uid="uid://djl5pa40oerdq" path="res://art/snow_screen_2.png" id="1_1m55f"]
+[ext_resource type="AudioStream" uid="uid://84ewwpdpy8vy" path="res://audio/snowball hit.wav" id="2_b71db"]
 
 [sub_resource type="GDScript" id="GDScript_ly7p2"]
 script/source = "extends Area2D
@@ -40,6 +41,7 @@ func _on_area_entered(area: Area2D) -> void:
 	if is_instance_valid(area) and area.is_in_group(\"Player\"):
 		print(\"Hit Player\")
 		area.get_parent().velocity /= 2
+	$AudioStreamPlayer.play()
 	queue_free()
 "
 
@@ -77,6 +79,10 @@ color = Color(1, 1, 1, 0.26666668)
 texture = SubResource("ImageTexture_1m55f")
 texture_scale = 17.51
 height = 1.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_b71db")
+volume_db = -80.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
