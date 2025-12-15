@@ -153,3 +153,5 @@ rotation = 1.5681185
 [node name="spikeArea" parent="." instance=ExtResource("8_wgo1c")]
 position = Vector2(498.00003, 64)
 scale = Vector2(9.92, 6.403)
+
+[connection signal="area_entered" from="LevelExit" to="." method="_on_level_exit_area_entered"]
