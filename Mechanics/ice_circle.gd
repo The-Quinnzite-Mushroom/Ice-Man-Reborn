@@ -3,7 +3,7 @@ extends Node2D
 signal ice_placed(position: Vector3, rotation: Vector3)
 signal out_of_ice()
 
-@onready var ice_placement_indictor: MeshInstance2D = $icePlacementIndictor
+@onready var ice_placement_indictor = $icePlacementIndictor
 
 @onready var ice_bar: ProgressBar = $CanvasLayer/MarginContainer/IceBar
 
