@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvl64iexctv0e"]
+[gd_scene load_steps=8 format=3 uid="uid://cvl64iexctv0e"]
 
 [ext_resource type="Script" uid="uid://5mgxu4rfrk1s" path="res://Mechanics/ice_circle.gd" id="1_viygt"]
 [ext_resource type="AudioStream" uid="uid://dwcyebw3wsyns" path="res://audio/ice deposit.wav" id="2_xy3n8"]
+[ext_resource type="Texture2D" uid="uid://br5gctxap2luy" path="res://art/mouse_indicator.png" id="3_hms24"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xy3n8"]
 vertex_color_use_as_albedo = true
@@ -22,7 +23,8 @@ script = ExtResource("1_viygt")
 ice_placement_radius = 20
 placement_cost = 4.0
 
-[node name="icePlacementIndictor" type="MeshInstance2D" parent="."]
+[node name="icePlacementIndictor2" type="MeshInstance2D" parent="."]
+visible = false
 mesh = SubResource("QuadMesh_viygt")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -43,3 +45,6 @@ show_percentage = false
 
 [node name="PickupSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_xy3n8")
+
+[node name="icePlacementIndictor" type="Sprite2D" parent="."]
+texture = ExtResource("3_hms24")
