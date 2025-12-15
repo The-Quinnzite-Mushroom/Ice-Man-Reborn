@@ -44,6 +44,7 @@ func _on_area_entered(area: Area2D) -> void:
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ly7p2"]
+radius = 1.0
 
 [sub_resource type="ImageTexture" id="ImageTexture_1m55f"]
 
