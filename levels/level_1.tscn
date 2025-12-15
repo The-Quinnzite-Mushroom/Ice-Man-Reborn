@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://dk0pwi3g46lvl"]
+[gd_scene load_steps=10 format=4 uid="uid://dk0pwi3g46lvl"]
 
 [ext_resource type="Script" uid="uid://cymcltac60k00" path="res://levels/level_base.gd" id="1_kx6l7"]
 [ext_resource type="PackedScene" uid="uid://cckps312nbpr0" path="res://Mechanics/background.tscn" id="2_jirdo"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dwee3322pm225" path="res://Mechanics/player_2.tscn" id="4_kx6l7"]
 [ext_resource type="Script" uid="uid://dq60fcyps0ayg" path="res://ice_manager.gd" id="5_gwceb"]
 [ext_resource type="PackedScene" uid="uid://26uuuhcisuvo" path="res://gameObject/spike_area.tscn" id="7_gwceb"]
+[ext_resource type="PackedScene" uid="uid://bslqjgh6b6nym" path="res://gameObject/ice_deposit.tscn" id="8_3sk1a"]
 [ext_resource type="FontFile" uid="uid://c2kxpenv3etbj" path="res://fonts/yoster.ttf" id="8_l53as"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bt44k"]
@@ -87,5 +88,20 @@ theme_override_fonts/font = ExtResource("8_l53as")
 theme_override_font_sizes/font_size = 12
 text = "Click to place ice. Use it to get over this pit
 "
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 1623.0
+offset_top = -19.0
+offset_right = 1913.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_l53as")
+theme_override_font_sizes/font_size = 12
+text = "Pick Up to get more Ice
+
+"
+
+[node name="ice_deposit" parent="." instance=ExtResource("8_3sk1a")]
+position = Vector2(1704, 37)
 
 [connection signal="area_entered" from="LevelExit" to="." method="_on_level_exit_area_entered"]
