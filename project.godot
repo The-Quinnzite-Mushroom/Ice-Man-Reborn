@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 <<<<<<<HEADrun/main_scene="uid://dk0pwi3g46lvl"
 
+[autoload]
+
+GlobalTimer="*res://GameTimer.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"
