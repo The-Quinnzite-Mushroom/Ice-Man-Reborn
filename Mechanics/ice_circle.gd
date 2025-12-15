@@ -43,9 +43,10 @@ func take_damage(damage):
 	ice_bar.value = current_health
 	
 	if current_health <= 0.0:
-		out_of_ice.emit()
-		print("signal")
-	
+		await get_tree().create_timer(0.5).timeout
+		if current_health <= 0.0:
+			out_of_ice.emit()
+			print("signal")
 
 func spawn_ice_rectangle():
 	ice_placed.emit((mouse_direction*ice_placement_radius) + global_position, ice_placement_direction.angle())

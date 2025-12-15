@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var ice_circle: Node2D = $iceCircle
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var blood_particles: CPUParticles2D = $bloodParticles
-
+@export var coyote_time := 0.15
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -16,7 +16,7 @@ const TEMPVECTOR = Vector2(0,1)
 
 const RUNNING_ANIMATION_SPEEDUP = 2
 const RUN_TILT = PI/ 8
-
+var coyote_timer := 0.0
 
 func _ready() -> void:
 	ice_circle.out_of_ice.connect(player_dead)
@@ -42,12 +42,16 @@ func set_running_animaton_speed():
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	if not is_on_floor():
+	if is_on_floor():
+		coyote_timer = coyote_time
+	else:
+		coyote_timer -= delta
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and coyote_timer > 0.0:
 		velocity.y = JUMP_VELOCITY * get_vel_jump_modifier()
+		coyote_timer = 0.0
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -78,8 +82,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		$AnimatedSprite2D.play("idle")
 		$AnimatedSprite2D.speed_scale = 1
-		
-	
 
 	move_and_slide()
 
